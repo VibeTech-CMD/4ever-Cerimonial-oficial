@@ -1,0 +1,10 @@
+PASTA DE IMAGENS DA 4EVER CERIMONIAL
+===================================
+Coloque aqui o arquivo da sua logomarca com o nome:
+- logo.jpg (ou deixe o arquivo 'Design sem nome_2.jpg' na pasta principal junto com o index.html)
+
+Quando quiser substituir as fotos provisorias dos fundadores pelas fotos oficiais, salve-as aqui com os nomes abaixo e avise ou troque no index.html:
+- fundadora-maisa.jpg
+- fundador-alex.jpg
+- fundadora-mayara.jpg
+- fundador-cleisson.jpg

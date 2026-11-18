@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4EVER Cerimonial | Assessoria e Cerimonial de Eventos em Macaé - RJ</title>
+    <meta name="description" content="4EVER Cerimonial - Assessoria e cerimonial de casamentos, debutantes e eventos em Macaé e região. Planejamento organizado, acolhedor e sofisticado com Maisa, Alex, Mayara e Cleisson.">
+    
+    <!-- Google Fonts: Cormorant Garamond & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        wine: '#702D32',
+                        terracotta: '#B7654A',
+                        gold: '#B8955A',
+                        wood: '#49352C',
+                        ivory: '#F8F4ED',
+                        'warm-white': '#FFFCF7',
+                        graphite: '#302B29',
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FFFCF7;
+            color: #302B29;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .font-editorial {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+        }
+
+        .arch-frame {
+            border-radius: 9999px 9999px 24px 24px;
+        }
+
+        .arch-frame-sm {
+            border-radius: 9999px 9999px 16px 16px;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+            .animate-float {
+                animation: none;
+            }
+        }
+
+        .divider-ornament {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .divider-ornament::before,
+        .divider-ornament::after {
+            content: '';
+            height: 1px;
+            width: 48px;
+            background-color: #B8955A;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-wine selection:text-warm-white">
+
+    <!-- ================= 1. CABEÇALHO ================= -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-warm-white/90 backdrop-blur-md border-b border-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-3 md:py-4">
+                
+                <!-- Logomarca e Subtítulo -->
+                <a href="#inicio" class="flex flex-col items-center group focus:outline-none">
+                    <img src="Design sem nome_2.jpg" alt="4EVER Cerimonial" class="h-11 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null; this.src='imagens/logo.jpg'; this.onerror=function(){this.style.display='none'; document.getElementById('logo-fallback').style.display='block';};">
+                    <span id="logo-fallback" style="display:none;" class="font-serif text-2xl md:text-3xl font-semibold tracking-widest text-wine">4EVER</span>
+                    <span class="text-[9px] md:text-[10px] uppercase tracking-[0.25em] text-gold font-medium mt-0.5">
+                        Assessoria e Cerimonial
+                    </span>
+                </a>
+
+                <!-- Menu Desktop -->
+                <nav class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-[0.18em] font-medium text-graphite">
+                    <a href="#inicio" class="hover:text-wine transition-colors py-1">Início</a>
+                    <a href="#sobre" class="hover:text-wine transition-colors py-1">Sobre nós</a>
+                    <a href="#servicos" class="hover:text-wine transition-colors py-1">Serviços</a>
+                    <a href="#portfolio" class="hover:text-wine transition-colors py-1">Portfólio</a>
+                    <a href="#contato" class="hover:text-wine transition-colors py-1">Contato</a>
+                </nav>
+
+                <!-- Botão CTA Desktop -->
+                <div class="hidden md:block">
+                    <a href="#contato" class="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-wine text-warm-white text-xs uppercase tracking-[0.16em] font-medium hover:bg-wood transition-all duration-300 shadow-sm hover:shadow-md focus:ring-2 focus:ring-gold focus:outline-none">
+                        Solicitar orçamento
+                    </a>
+                </div>
+
+                <!-- Botão Menu Mobile -->
+                <button id="mobile-menu-btn" aria-label="Abrir menu" class="md:hidden p-2 rounded-full text-graphite hover:text-wine hover:bg-ivory transition-colors focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-warm-white border-b border-gold/20 px-6 pt-2 pb-6 space-y-4">
+            <nav class="flex flex-col space-y-3 text-xs uppercase tracking-[0.18em] font-medium text-graphite text-center">
+                <a href="#inicio" class="mobile-link py-2 hover:text-wine">Início</a>
+                <a href="#sobre" class="mobile-link py-2 hover:text-wine">Sobre nós</a>
+                <a href="#servicos" class="mobile-link py-2 hover:text-wine">Serviços</a>
+                <a href="#portfolio" class="mobile-link py-2 hover:text-wine">Portfólio</a>
+                <a href="#contato" class="mobile-link py-2 hover:text-wine">Contato</a>
+            </nav>
+            <div class="pt-2 text-center">
+                <a href="#contato" class="mobile-link inline-block w-full px-6 py-3 rounded-full bg-wine text-warm-white text-xs uppercase tracking-[0.16em] font-medium hover:bg-wood transition-colors">
+                    Solicitar orçamento
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= 2. HERO / PRIMEIRA DOBRA ================= -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80" 
+                 alt="Detalhes delicados de um casamento elegante com buquê floral" 
+                 class="w-full h-full object-cover object-center scale-105">
+            <div class="absolute inset-0 bg-gradient-to-b from-wood/75 via-wood/60 to-wood/80"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-warm-white">
+            <p class="text-xs md:text-sm uppercase tracking-[0.32em] text-ivory/90 font-light mb-5">
+                Macaé &bull; Região dos Lagos &bull; Rio de Janeiro
+            </p>
+            
+            <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.15] tracking-tight mb-6">
+                Para que vocês vivam cada segundo, <span class="italic font-light text-ivory">nós cuidamos de todo o resto.</span>
+            </h1>
+            
+            <p class="max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-ivory/90 font-light leading-relaxed mb-10">
+                Planejamento organizado, sensibilidade estética e acompanhamento próximo para transformar o seu casamento e suas celebrações em experiências leves e inesquecíveis.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#contato" class="w-full sm:w-auto px-8 py-4 rounded-full bg-wine text-warm-white text-xs uppercase tracking-[0.2em] font-medium hover:bg-terracotta transition-all duration-300 shadow-lg hover:shadow-xl">
+                    Vamos planejar seu casamento
+                </a>
+                <a href="#servicos" class="w-full sm:w-auto px-8 py-4 rounded-full border border-ivory/60 bg-warm-white/10 backdrop-blur-sm text-warm-white text-xs uppercase tracking-[0.2em] font-medium hover:bg-warm-white hover:text-wood transition-all duration-300">
+                    Conheça nosso trabalho
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 3. SOBRE A EMPRESA ================= -->
+    <section id="sobre" class="py-20 md:py-28 bg-gradient-to-b from-warm-white via-ivory to-warm-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <div class="lg:col-span-5 flex justify-center reveal">
+                    <div class="relative w-72 sm:w-80 md:w-96 animate-float">
+                        <div class="absolute -inset-3 arch-frame border border-gold/40 translate-x-2 translate-y-2"></div>
+                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80" 
+                             alt="Cerimônia de casamento ao ar livre com decoração floral elegante" 
+                             class="relative w-full h-[420px] sm:h-[480px] object-cover arch-frame shadow-xl">
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-6 reveal">
+                    <span class="text-xs uppercase tracking-[0.28em] text-terracotta font-semibold">Nossa Essência</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-wood leading-tight">
+                        Organização impecável com acolhimento humano.
+                    </h2>
+                    <div class="w-16 h-[1px] bg-gold"></div>
+                    <p class="text-graphite/85 text-sm sm:text-base leading-relaxed font-light">
+                        A <strong>4EVER Cerimonial</strong> nasceu da união de quatro pessoas apaixonadas por celebrar histórias reais. Atuando em Macaé e região, dedicamos nossa experiência à assessoria e organização de casamentos, festas de debutantes, eventos corporativos e celebrações especiais.
+                    </p>
+                    <p class="text-graphite/85 text-sm sm:text-base leading-relaxed font-light">
+                        Acreditamos que o planejamento de um grande dia deve ser tão prazeroso quanto a própria festa. Por isso, conduzimos cada etapa com transparência, escuta ativa e rigor técnico — garantindo que noivos, famílias e anfitriões desfrutem do momento com tranquilidade absoluta.
+                    </p>
+                    <div class="pt-4 grid grid-cols-2 sm:grid-cols-3 gap-6 border-t border-gold/25">
+                        <div>
+                            <p class="font-serif text-2xl text-wine font-semibold">4 Fundadores</p>
+                            <p class="text-xs text-graphite/75 mt-1">Atuação direta em cada evento</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-2xl text-wine font-semibold">Foco Nupcial</p>
+                            <p class="text-xs text-graphite/75 mt-1">Especialistas em casamentos</p>
+                        </div>
+                        <div class="col-span-2 sm:col-span-1">
+                            <p class="font-serif text-2xl text-wine font-semibold">Macaé & Região</p>
+                            <p class="text-xs text-graphite/75 mt-1">Atendimento próximo e dedicado</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 4. OS QUATRO FUNDADORES ================= -->
+    <section class="py-20 md:py-24 bg-gradient-to-b from-warm-white via-ivory/70 to-warm-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <span class="text-xs uppercase tracking-[0.28em] text-terracotta font-semibold">Quem Faz Acontecer</span>
+                <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-wood mt-2 mb-4">Os Quatro Fundadores</h2>
+                <div class="divider-ornament mb-4">
+                    <span class="text-gold text-sm">&#10022;</span>
+                </div>
+                <p class="text-sm text-graphite/80 font-light leading-relaxed">
+                    Somos uma equipe enxuta, unida e presente. Do primeiro alinhamento ao encerramento da pista, você conta diretamente com os quatro sócios da 4EVER.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+                
+                <!-- Fundadora 1: Maisa -->
+                <div class="bg-warm-white rounded-3xl p-6 text-center border border-gold/20 shadow-sm hover:shadow-md transition-all duration-300 reveal">
+                    <div class="w-40 h-48 mx-auto mb-5 overflow-hidden arch-frame-sm border-2 border-gold/30 bg-ivory">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80" 
+                             alt="Maisa - Sócia-fundadora da 4EVER Cerimonial" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-serif text-2xl text-wine font-semibold">Maisa</h3>
+                    <p class="text-[11px] uppercase tracking-[0.2em] text-gold font-medium mt-1 mb-3">Sócia-Fundadora</p>
+                    <p class="text-xs text-graphite/80 font-light leading-relaxed">
+                        Com olhar atento e paixão por perícia e precisão, garante que cada detalhe contratual, cronograma e logística esteja rigorosamente sob controle.
+                    </p>
+                </div>
+
+                <!-- Fundador 2: Alex -->
+                <div class="bg-warm-white rounded-3xl p-6 text-center border border-gold/20 shadow-sm hover:shadow-md transition-all duration-300 reveal">
+                    <div class="w-40 h-48 mx-auto mb-5 overflow-hidden arch-frame-sm border-2 border-gold/30 bg-ivory">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=500&q=80" 
+                             alt="Alex - Sócio-fundador da 4EVER Cerimonial" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-serif text-2xl text-wine font-semibold">Alex</h3>
+                    <p class="text-[11px] uppercase tracking-[0.2em] text-gold font-medium mt-1 mb-3">Sócio-Fundador</p>
+                    <p class="text-xs text-graphite/80 font-light leading-relaxed">
+                        Apaixonado por música e ritmo, traz sensibilidade para a condução dos momentos emocionantes, entradas cerimoniais e sintonia da festa.
+                    </p>
+                </div>
+
+                <!-- Fundadora 3: Mayara -->
+                <div class="bg-warm-white rounded-3xl p-6 text-center border border-gold/20 shadow-sm hover:shadow-md transition-all duration-300 reveal">
+                    <div class="w-40 h-48 mx-auto mb-5 overflow-hidden arch-frame-sm border-2 border-gold/30 bg-ivory">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=500&q=80" 
+                             alt="Mayara - Sócia-fundadora da 4EVER Cerimonial" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-serif text-2xl text-wine font-semibold">Mayara</h3>
+                    <p class="text-[11px] uppercase tracking-[0.2em] text-gold font-medium mt-1 mb-3">Sócia-Fundadora</p>
+                    <p class="text-xs text-graphite/80 font-light leading-relaxed">
+                        Criativa, comunicativa e sempre em busca de novas inspirações visuais, contribui com leveza, estética refinada e soluções encantadoras.
+                    </p>
+                </div>
+
+                <!-- Fundador 4: Cleisson -->
+                <div class="bg-warm-white rounded-3xl p-6 text-center border border-gold/20 shadow-sm hover:shadow-md transition-all duration-300 reveal">
+                    <div class="w-40 h-48 mx-auto mb-5 overflow-hidden arch-frame-sm border-2 border-gold/30 bg-ivory">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80" 
+                             alt="Cleisson - Sócio-fundador da 4EVER Cerimonial" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-serif text-2xl text-wine font-semibold">Cleisson</h3>
+                    <p class="text-[11px] uppercase tracking-[0.2em] text-gold font-medium mt-1 mb-3">Sócio-Fundador</p>
+                    <p class="text-xs text-graphite/80 font-light leading-relaxed">
+                        Prestativo por natureza e dedicado a cuidar das pessoas, oferece suporte próximo aos noivos, familiares e fornecedores do início ao fim.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 5. SERVIÇOS E PACOTES ================= -->
+    <section id="servicos" class="py-20 md:py-28 bg-gradient-to-b from-warm-white via-ivory to-warm-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <span class="text-xs uppercase tracking-[0.28em] text-terracotta font-semibold">Assessoria sob Medida</span>
+                <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-wood mt-2 mb-4">Nossos Pacotes de Casamento</h2>
+                <div class="divider-ornament mb-4">
+                    <span class="text-gold text-sm">&#10022;</span>
+                </div>
+                <p class="text-sm text-graphite/80 font-light leading-relaxed">
+                    Estruturamos formatos pensados para acompanhar cada casal conforme a fase do planejamento e o nível de suporte desejado.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-16">
+                
+                <!-- Pacote Love -->
+                <div class="bg-warm-white rounded-[2rem] overflow-hidden border border-gold/25 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col reveal">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=800&q=80" 
+                             alt="Casal celebrando cerimônia íntima - Pacote Love" 
+                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <span class="text-[11px] uppercase tracking-[0.2em] text-terracotta font-semibold">Assessoria do Dia / Final</span>
+                        <h3 class="font-serif text-3xl text-wood mt-1 mb-3">Pacote Love</h3>
+                        <p class="text-xs sm:text-sm text-graphite/80 font-light leading-relaxed mb-6 flex-1">
+                            Ideal para casais que já organizaram as principais contratações e desejam tranquilidade na reta final, alinhamento de fornecedores, ensaio e coordenação completa no grande dia.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-graphite/85 border-t border-gold/20 pt-5 mb-8">
+                            <li class="flex items-center gap-2"><span class="text-gold">&#10003;</span> Revisão de contratos e cronograma</li>
+                            <li class="flex items-center gap-2"><span class="text-gold">&#10003;</span> Ensaio geral da cerimônia</li>
+                            <li class="flex items-center gap-2"><span class="text-gold">&#10003;</span> Coordenação integral no dia do evento</li>
+                        </ul>
+                        <a href="#contato" class="w-full text-center py-3.5 px-6 rounded-full border border-wine text-wine text-xs uppercase tracking-[0.18em] font-medium hover:bg-wine hover:text-warm-white transition-colors">
+                            Consultar Pacote Love
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Pacote Forever (Destaque) -->
+                <div class="bg-warm-white rounded-[2rem] overflow-hidden border-2 border-gold shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col relative reveal">
+                    <div class="bg-wine text-warm-white text-[10px] uppercase tracking-[0.25em] text-center py-2 font-medium">
+                        Assessoria Completa &bull; Mais Procurado
+                    </div>
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=80" 
+                             alt="Recepção de casamento sofisticada com flores - Pacote Forever" 
+                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <span class="text-[11px] uppercase tracking-[0.2em] text-gold font-semibold">Do Início ao Grande Dia</span>
+                        <h3 class="font-serif text-3xl text-wine mt-1 mb-3">Pacote Forever</h3>
+                        <p class="text-xs sm:text-sm text-graphite/80 font-light leading-relaxed mb-6 flex-1">
+                            Acompanhamento integral desde a concepção do casamento. Auxiliamos na gestão financeira, curadoria de fornecedores, reuniões técnicas e execução impecável de cada momento.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-graphite/85 border-t border-gold/20 pt-5 mb-8">
+                            <li class="flex items-center gap-2"><span class="text-gold">&#10003;</span> Planejamento e controle orçamentário</li>
+                            <li class="flex items-center gap-2"><span class="text-gold">&#10003;</span> Curadoria e negociação com fornecedores</li>
+                            <li class="flex items-center gap-2"><span class="text-gold">&#10003;</span> Gestão de convidados (RSVP) e cerimonial</li>
+                        </ul>
+                        <a href="#contato" class="w-full text-center py-3.5 px-6 rounded-full bg-wine text-warm-white text-xs uppercase tracking-[0.18em] font-medium hover:bg-wood transition-colors shadow-sm">
+                            Consultar Pacote Forever
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Pacote Personalizado -->
+                <div class="bg-warm-white rounded-[2rem] overflow-hidden border border-gold/25 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col reveal">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=800&q=80" 
+                             alt="Detalhes personalizados de casamento - Pacote Personalizado" 
+                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <span class="text-[11px] uppercase tracking-[0.2em] text-terracotta font-semibold">Sob Medida para Você</span>
+                        <h3 class="font-serif text-3xl text-wood mt-1 mb-3">Pacote Personalizado</h3>
+                        <p class="text-xs sm:text-sm text-graphite/80 font-light leading-relaxed mb-6 flex-1">
+                            Desenhado especialmente para atender demandas específicas do casal, destination weddings na região, mini weddings ou formatos exclusivos de celebração.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-graphite/85 border-t border-gold/20 pt-5 mb-8">
+                            <li class="flex items-center gap-2"><span class="text-gold">&#10003;</span> Escopo adaptado à rotina do casal</li>
+                            <li class="flex items-center gap-2"><span class="text-gold">&#10003;</span> Suporte dedicado para formatos únicos</li>
+                            <li class="flex items-center gap-2"><span class="text-gold">&#10003;</span> Execução completa pela equipe 4EVER</li>
+                        </ul>
+                        <a href="#contato" class="w-full text-center py-3.5 px-6 rounded-full border border-wine text-wine text-xs uppercase tracking-[0.18em] font-medium hover:bg-wine hover:text-warm-white transition-colors">
+                            Montar Proposta Sob Medida
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Outras Celebrações Atendidas -->
+            <div class="bg-warm-white rounded-[2rem] p-8 md:p-12 border border-gold/25 shadow-sm reveal">
+                <div class="text-center max-w-xl mx-auto mb-10">
+                    <h3 class="font-serif text-2xl sm:text-3xl text-wood">Outras Celebrações Especiais</h3>
+                    <p class="text-xs sm:text-sm text-graphite/75 font-light mt-2">
+                        Levamos a mesma excelência organizacional dos casamentos para outros marcos importantes.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center p-5 rounded-2xl bg-ivory/60">
+                        <h4 class="font-serif text-xl text-wine font-semibold mb-2">Festas de Debutantes</h4>
+                        <p class="text-xs text-graphite/80 font-light leading-relaxed mb-4">
+                            Planejamento cuidadoso do cerimonial dos 15 anos, protocolos, valsa, recepção e suporte completo à debutante e sua família.
+                        </p>
+                        <a href="#contato" class="text-[11px] uppercase tracking-[0.18em] text-terracotta font-semibold hover:text-wine">Solicitar atendimento &rarr;</a>
+                    </div>
+                    <div class="text-center p-5 rounded-2xl bg-ivory/60">
+                        <h4 class="font-serif text-xl text-wine font-semibold mb-2">Eventos Corporativos</h4>
+                        <p class="text-xs text-graphite/80 font-light leading-relaxed mb-4">
+                            Organização de confraternizações, lançamentos, palestras e encontros empresariais com pontualidade e imagem institucional impecável.
+                        </p>
+                        <a href="#contato" class="text-[11px] uppercase tracking-[0.18em] text-terracotta font-semibold hover:text-wine">Solicitar atendimento &rarr;</a>
+                    </div>
+                    <div class="text-center p-5 rounded-2xl bg-ivory/60">
+                        <h4 class="font-serif text-xl text-wine font-semibold mb-2">Celebrações Especiais</h4>
+                        <p class="text-xs text-graphite/80 font-light leading-relaxed mb-4">
+                            Bodas, aniversários marcantes, noivados e recepções íntimas conduzidas com discrição, elegância e fluidez.
+                        </p>
+                        <a href="#contato" class="text-[11px] uppercase tracking-[0.18em] text-terracotta font-semibold hover:text-wine">Solicitar atendimento &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 6. DIFERENCIAIS ================= -->
+    <section class="py-20 bg-gradient-to-br from-wood via-wine to-wood text-warm-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+                <span class="text-xs uppercase tracking-[0.28em] text-gold font-medium">Nosso Compromisso</span>
+                <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl mt-2">Por que escolher a 4EVER Cerimonial?</h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 text-center">
+                <div class="p-6 rounded-3xl bg-warm-white/5 border border-gold/25 backdrop-blur-sm reveal">
+                    <h3 class="font-serif text-xl text-gold mb-2">Planejamento Organizado</h3>
+                    <p class="text-xs text-ivory/85 font-light leading-relaxed">Cronogramas claros e etapas estruturadas para evitar imprevistos.</p>
+                </div>
+                <div class="p-6 rounded-3xl bg-warm-white/5 border border-gold/25 backdrop-blur-sm reveal">
+                    <h3 class="font-serif text-xl text-gold mb-2">Atenção aos Detalhes</h3>
+                    <p class="text-xs text-ivory/85 font-light leading-relaxed">Cuidado minucioso com cada item da cerimônia e da recepção.</p>
+                </div>
+                <div class="p-6 rounded-3xl bg-warm-white/5 border border-gold/25 backdrop-blur-sm reveal">
+                    <h3 class="font-serif text-xl text-gold mb-2">Acompanhamento Próximo</h3>
+                    <p class="text-xs text-ivory/85 font-light leading-relaxed">Presença ativa dos quatro fundadores em toda a jornada.</p>
+                </div>
+                <div class="p-6 rounded-3xl bg-warm-white/5 border border-gold/25 backdrop-blur-sm reveal">
+                    <h3 class="font-serif text-xl text-gold mb-2">Comunicação Clara</h3>
+                    <p class="text-xs text-ivory/85 font-light leading-relaxed">Alinhamento transparente com noivos, familiares e equipes.</p>
+                </div>
+                <div class="p-6 rounded-3xl bg-warm-white/5 border border-gold/25 backdrop-blur-sm sm:col-span-2 lg:col-span-1 reveal">
+                    <h3 class="font-serif text-xl text-gold mb-2">Coordenação Precisa</h3>
+                    <p class="text-xs text-ivory/85 font-light leading-relaxed">Sincronia entre fornecedores e momentos conforme o escopo contratado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 7. PORTFÓLIO EDITORIAL ================= -->
+    <section id="portfolio" class="py-20 md:py-28 bg-gradient-to-b from-warm-white via-ivory/60 to-warm-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <span class="text-xs uppercase tracking-[0.28em] text-terracotta font-semibold">Inspirações & Atmosfera</span>
+                <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-wood mt-2 mb-4">Galeria Editorial</h2>
+                <div class="divider-ornament mb-4">
+                    <span class="text-gold text-sm">&#10022;</span>
+                </div>
+                <p class="text-sm text-graphite/80 font-light">
+                    Detalhes, cerimônias e recepções que traduzem a estética acolhedora e sofisticada dos eventos que assessoramos.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center reveal">
+                <div class="md:col-span-5">
+                    <div class="overflow-hidden arch-frame shadow-md h-[420px]">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" 
+                             alt="Buquê de noiva com flores em tons suaves" 
+                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                    </div>
+                </div>
+                <div class="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="overflow-hidden rounded-3xl shadow-md h-52">
+                        <img src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=800&q=80" 
+                             alt="Mesa posta com arranjos florais e iluminação acolhedora" 
+                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="overflow-hidden rounded-3xl shadow-md h-52">
+                        <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80" 
+                             alt="Alianças e detalhes da cerimônia de casamento" 
+                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="sm:col-span-2 overflow-hidden rounded-3xl shadow-md h-52">
+                        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Decoração de recepção de casamento com madeira e flores" 
+                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 8. DEPOIMENTOS ================= -->
+    <section class="py-16 md:py-20 bg-ivory/70 border-y border-gold/20">
+        <div class="max-w-3xl mx-auto px-6 text-center reveal">
+            <span class="text-xs uppercase tracking-[0.28em] text-terracotta font-semibold">Histórias Reais</span>
+            <h2 class="font-serif text-3xl sm:text-4xl text-wood mt-2 mb-6">Palavras de Quem Celebrou Conosco</h2>
+            <div class="bg-warm-white rounded-3xl p-8 md:p-10 border border-gold/25 shadow-sm">
+                <p class="font-serif italic text-xl sm:text-2xl text-graphite/80 leading-relaxed">
+                    “Em breve, compartilharemos aqui os relatos reais dos noivos e famílias que confiaram seus momentos mais especiais à 4EVER Cerimonial.”
+                </p>
+                <p class="text-xs uppercase tracking-[0.2em] text-gold mt-4 font-medium">
+                    Acompanhe nossos bastidores no Instagram @4ever_cerimonial
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 9. CONTATO E ORÇAMENTO ================= -->
+    <section id="contato" class="py-20 md:py-28 bg-gradient-to-b from-warm-white to-ivory">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <div class="lg:col-span-5 space-y-6 reveal">
+                    <span class="text-xs uppercase tracking-[0.28em] text-terracotta font-semibold">Vamos Conversar</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-wood leading-tight">
+                        Comece a planejar o seu grande dia.
+                    </h2>
+                    <p class="text-sm text-graphite/80 font-light leading-relaxed">
+                        Preencha os dados ao lado para iniciarmos o atendimento diretamente pelo WhatsApp com todas as informações iniciais do seu evento.
+                    </p>
+                    
+                    <div class="space-y-4 pt-4 border-t border-gold/25 text-sm text-graphite/85">
+                        <div>
+                            <p class="text-[11px] uppercase tracking-[0.2em] text-gold font-semibold">Local de Atuação</p>
+                            <p class="mt-0.5">Macaé e Região &bull; Rio de Janeiro</p>
+                        </div>
+                        <div>
+                            <p class="text-[11px] uppercase tracking-[0.2em] text-gold font-semibold">Instagram Oficial</p>
+                            <a href="https://instagram.com/4ever_cerimonial" target="_blank" rel="noopener noreferrer" class="mt-0.5 inline-block text-wine hover:underline">
+                                @4ever_cerimonial
+                            </a>
+                        </div>
+                        <div>
+                            <p class="text-[11px] uppercase tracking-[0.2em] text-gold font-semibold">E-mail</p>
+                            <p class="mt-0.5">[INSERIR E-MAIL OFICIAL DA 4EVER]</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 bg-warm-white rounded-[2rem] p-8 sm:p-10 border border-gold/25 shadow-md reveal">
+                    <form id="orcamento-form" class="space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label for="nome" class="block text-xs uppercase tracking-[0.15em] text-graphite/80 font-medium mb-2">Seu Nome *</label>
+                                <input type="text" id="nome" name="nome" required placeholder="Ex: Camila e Lucas"
+                                       class="w-full px-4 py-3 rounded-2xl bg-ivory/60 border border-gold/30 text-sm focus:outline-none focus:border-wine focus:bg-warm-white transition-colors">
+                            </div>
+                            <div>
+                                <label for="whatsapp" class="block text-xs uppercase tracking-[0.15em] text-graphite/80 font-medium mb-2">WhatsApp *</label>
+                                <input type="tel" id="whatsapp" name="whatsapp" required placeholder="(22) 99999-9999"
+                                       class="w-full px-4 py-3 rounded-2xl bg-ivory/60 border border-gold/30 text-sm focus:outline-none focus:border-wine focus:bg-warm-white transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                            <div>
+                                <label for="tipo_evento" class="block text-xs uppercase tracking-[0.15em] text-graphite/80 font-medium mb-2">Tipo de Evento *</label>
+                                <select id="tipo_evento" name="tipo_evento" required
+                                        class="w-full px-4 py-3 rounded-2xl bg-ivory/60 border border-gold/30 text-sm focus:outline-none focus:border-wine focus:bg-warm-white transition-colors">
+                                    <option value="Casamento">Casamento</option>
+                                    <option value="Festa de Debutante">Debutante (15 anos)</option>
+                                    <option value="Evento Corporativo">Corporativo</option>
+                                    <option value="Celebração Especial">Outra Celebração</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="data_evento" class="block text-xs uppercase tracking-[0.15em] text-graphite/80 font-medium mb-2">Data Prevista</label>
+                                <input type="text" id="data_evento" name="data_evento" placeholder="Ex: Novembro/2027"
+                                       class="w-full px-4 py-3 rounded-2xl bg-ivory/60 border border-gold/30 text-sm focus:outline-none focus:border-wine focus:bg-warm-white transition-colors">
+                            </div>
+                            <div>
+                                <label for="local_evento" class="block text-xs uppercase tracking-[0.15em] text-graphite/80 font-medium mb-2">Cidade / Local</label>
+                                <input type="text" id="local_evento" name="local_evento" placeholder="Ex: Macaé - RJ"
+                                       class="w-full px-4 py-3 rounded-2xl bg-ivory/60 border border-gold/30 text-sm focus:outline-none focus:border-wine focus:bg-warm-white transition-colors">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="mensagem" class="block text-xs uppercase tracking-[0.15em] text-graphite/80 font-medium mb-2">Conte um pouco sobre seu sonho</label>
+                            <textarea id="mensagem" name="mensagem" rows="3" placeholder="Número estimado de convidados, estilo da cerimônia ou pacote de interesse..."
+                                      class="w-full px-4 py-3 rounded-2xl bg-ivory/60 border border-gold/30 text-sm focus:outline-none focus:border-wine focus:bg-warm-white transition-colors"></textarea>
+                        </div>
+
+                        <div class="pt-2">
+                            <button type="submit" class="w-full py-4 px-8 rounded-full bg-wine text-warm-white text-xs uppercase tracking-[0.2em] font-medium hover:bg-wood transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer">
+                                Enviar solicitação via WhatsApp
+                            </button>
+                            <p class="text-[11px] text-graphite/60 text-center mt-3">
+                                Ao clicar, você será direcionado para o nosso WhatsApp com sua mensagem pronta.
+                            </p>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 10. RODAPÉ ================= -->
+    <footer class="bg-wood text-ivory/85 py-14 border-t border-gold/20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 pb-10 border-b border-ivory/15">
+                <div class="text-center md:text-left">
+                    <p class="font-serif text-2xl tracking-widest text-warm-white">4EVER CERIMONIAL</p>
+                    <p class="text-[10px] uppercase tracking-[0.25em] text-gold mt-1">Assessoria e Cerimonial &bull; Macaé - RJ</p>
+                </div>
+
+                <nav class="flex flex-wrap justify-center gap-6 text-xs uppercase tracking-[0.16em]">
+                    <a href="#inicio" class="hover:text-gold transition-colors">Início</a>
+                    <a href="#sobre" class="hover:text-gold transition-colors">Sobre nós</a>
+                    <a href="#servicos" class="hover:text-gold transition-colors">Serviços</a>
+                    <a href="#portfolio" class="hover:text-gold transition-colors">Portfólio</a>
+                    <a href="#contato" class="hover:text-gold transition-colors">Contato</a>
+                </nav>
+
+                <div class="flex items-center gap-4">
+                    <a href="https://instagram.com/4ever_cerimonial" target="_blank" rel="noopener noreferrer" class="px-5 py-2 rounded-full border border-gold/40 text-xs uppercase tracking-[0.15em] hover:bg-gold hover:text-wood transition-colors">
+                        Instagram
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-ivory/60 gap-4">
+                <p>&copy; <span id="year"></span> 4EVER Cerimonial. Todos os direitos reservados.</p>
+                <p>Macaé &bull; Rio de Janeiro</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante de WhatsApp -->
+    <a id="whatsapp-float" href="https://wa.me/5522999999999?text=Ol%C3%A1%2C%20equipe%204EVER%20Cerimonial!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." 
+       target="_blank" rel="noopener noreferrer" aria-label="Conversar no WhatsApp"
+       class="fixed bottom-6 right-6 z-40 flex items-center gap-2.5 bg-wine text-warm-white px-5 py-3.5 rounded-full shadow-lg hover:bg-terracotta transition-all duration-300 border border-gold/30">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/>
+        </svg>
+        <span class="text-xs uppercase tracking-[0.15em] font-medium hidden sm:inline">WhatsApp</span>
+    </a>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script>
+        // IMPORTANTE: Substitua pelo número oficial de WhatsApp da 4EVER Cerimonial (somente dígitos, com DDI 55 e DDD 22)
+        const WHATSAPP_NUMBER = "5522999999999";
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const floatBtn = document.getElementById('whatsapp-float');
+        if (floatBtn) {
+            floatBtn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Olá, equipe 4EVER Cerimonial! Gostaria de solicitar um orçamento.")}`;
+        }
+
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        document.getElementById('orcamento-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nome = document.getElementById('nome').value.trim();
+            const whatsapp = document.getElementById('whatsapp').value.trim();
+            const tipo = document.getElementById('tipo_evento').value;
+            const data = document.getElementById('data_evento').value.trim() || 'A definir';
+            const local = document.getElementById('local_evento').value.trim() || 'A definir';
+            const mensagem = document.getElementById('mensagem').value.trim();
+
+            let texto = `Olá, equipe *4EVER Cerimonial*! Gostaria de solicitar um orçamento.\n\n`;
+            texto += `*Nome:* ${nome}\n`;
+            texto += `*WhatsApp:* ${whatsapp}\n`;
+            texto += `*Evento:* ${tipo}\n`;
+            texto += `*Data prevista:* ${data}\n`;
+            texto += `*Local:* ${local}\n`;
+            if (mensagem) {
+                texto += `*Detalhes:* ${mensagem}\n`;
+            }
+
+            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(texto)}`;
+            window.open(url, '_blank', 'noopener,noreferrer');
+        });
+    </script>
+</body>
+</html>
